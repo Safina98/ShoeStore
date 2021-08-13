@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="card_margin">16dp</dimen>
+    <dimen name="small_margin">2dp</dimen>
+    <dimen name="medium_margin">8dp</dimen>
+    <dimen name="big_font_size">36sp</dimen>
+    <dimen name="design_fab_image_size" tools:override="true">64dp</dimen>
+    <dimen name="big_margin">24dp</dimen>
+</resources>

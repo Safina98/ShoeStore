@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Welcome to Shoe Store Inventory</string>
+    <string name="Hello">Hello</string>
+    <string name="shoe_store">Shoe Store</string>
+    <string name="shoe_logo">shoe logo</string>
+    <string name="btn_next_text">NEXT</string>
+    <string name="text_moto">Find Your Perfect Shoes</string>
+    <string name="start">GET STARTED</string>
+    <string name="size">Size:</string>
+    <string name="company">Company:</string>
+    <string name="desc">Description:</string>
+    <string name="loggout">Logout</string>
+    <string name="shole_list">List of Shoes</string>
+    <string name="add_shoe">Add New Shoe</string>
+    <string name="instruction1">This is an app that shows list of shoes</string>
+    <string name="instruction2">You will lose new data added in this app once you quit the app</string>
+    <string name="instruction3">Click the add button to add a new Shoe</string>
+    <string name="instruction4">Click menu and choose Logout to logout from the app</string>
+    <string name="txt_instruction">Instructions</string>
+</resources>
