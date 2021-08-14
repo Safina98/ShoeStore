@@ -28,5 +28,4 @@ class WelcomeFragment : Fragment() {
     }
     // Logo: https://www.pinterest.com/pin/33847434690530116/
 
-
 }
