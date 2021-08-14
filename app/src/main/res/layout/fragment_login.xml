@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
     </data>
+    <!--
+    View items arrangement in this layout is simple. All view item in this layout is positioned next to each other,
+    no item dissapear when the configuration changed to lanscape either. Therefore i choose linear layout for this layout
+    -->
 
 
        <LinearLayout
@@ -37,7 +40,7 @@
                            android:layout_width="match_parent"
                            android:layout_height="wrap_content"
                            android:fontFamily="@font/antic_didone"
-                           android:hint="Email"
+                           android:hint="@string/email"
                            android:inputType="textWebEmailAddress"
                            android:textColor="@android:color/black" />
                    </com.google.android.material.textfield.TextInputLayout>
@@ -51,7 +54,7 @@
                            android:layout_width="match_parent"
                            android:layout_height="wrap_content"
                            android:fontFamily="@font/antic_didone"
-                           android:hint="Password"
+                           android:hint="@string/password"
                            android:inputType="textPassword"
                            android:textColor="@android:color/black" />
                    </com.google.android.material.textfield.TextInputLayout>
@@ -67,7 +70,7 @@
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
                            android:layout_margin="@dimen/medium_margin"
-                           android:text="Sign Up" />
+                           android:text="@string/sign_up" />
 
                        <Button
                            android:id="@+id/btn_sign_up"
@@ -75,7 +78,7 @@
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
                            android:layout_margin="@dimen/medium_margin"
-                           android:text="Sign Up" />
+                           android:text="@string/sign_in" />
 
 
                    </LinearLayout>

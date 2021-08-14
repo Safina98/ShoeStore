@@ -3,12 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="viewModel"
-            type="com.udacity.shoestore.ShoeListViewModel" />
-
-    </data>
+    <!--
+    I choose constraint layout for this layout because i want the floating action button positioned in front of the
+    scroll view which is not possible in linear layout
+    -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,6 +22,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/cardview_light_background"
+            android:contentDescription="@string/fab"
             android:foregroundTint="@color/cardview_light_background"
             android:scaleType="fitXY"
             android:src="@drawable/ic_baseline_add_circle_24"

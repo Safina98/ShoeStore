@@ -5,125 +5,168 @@
 
     <data>
         <variable
-            name="shoe"
-            type="com.udacity.shoestore.models.Shoe" />
-        <variable
             name="viewModel"
             type="com.udacity.shoestore.ShoeListViewModel" />
         <import type="com.udacity.shoestore.Converter"/>
-
     </data>
-
-    <LinearLayout
+    <!--
+    I choose constrain layout for this layout to reduce the view Hierarchy for this layout
+    I need to use scroll view in this layout so that all view item in this layout will be accessable in landscape configuration
+    if i choose linear layout, i need two linear layouts to arrange my item views to look like this, therefore
+    the view hierarchy i need is: scroll view-> Linear layout (vertical) -> imageview and edit text
+                                                                         ->linear layout (horizontal) -> buttons
+    by using constraint layout the view hierarcy : scroll view -> constraint layout ->image view, edit text, buttons
+    -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         tools:context=".shoedetailfragment.ShoeDetailFragment">
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/medium_margin"
-            app:srcCompat="@drawable/shoe_trans_new" />
-        <com.google.android.material.textfield.TextInputLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/medium_margin">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_url"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/antic_didone"
-                android:hint="Image URL"
-                android:inputType="text"
-                android:text="@={viewModel.shoe_url}"
-                android:textColor="@android:color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/medium_margin">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/antic_didone"
-                android:hint="Name"
-                android:inputType="text"
-                android:text="@={viewModel.shoe_name}"
-                android:textColor="@android:color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/medium_margin">
+            android:layout_height="match_parent">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_size"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/antic_didone"
-                android:hint="Size"
-                android:text="@={Converter.decimalToText(viewModel.shoe_size)}"
-                android:inputType="numberDecimal"
-                android:textColor="@android:color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/medium_margin">
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/shoe_trans_new"
+                android:contentDescription="@string/shoe_logo" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_company"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/antic_didone"
-            android:hint="Company"
-            android:inputType="text"
-            android:text="@={viewModel.shoe_comp}"
-            android:textColor="@android:color/black" />
-    </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/medium_margin">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_desc"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/antic_didone"
-                android:hint="Description"
-                android:inputType="text"
-                android:text="@={viewModel.shoe_desc}"
-                android:textColor="@android:color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:gravity="bottom"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+                android:layout_margin="@dimen/medium_margin"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/antic_didone"
+                    android:inputType="text"
+                    android:hint="@string/image_url"
+                    android:text="@={viewModel.shoe_url}"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/antic_didone"
+                    android:hint="@string/name"
+                    android:inputType="text"
+                    android:text="@={viewModel.shoe_name}"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayout2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/antic_didone"
+                    android:hint="@string/size"
+                    android:inputType="numberDecimal"
+                    android:text="@={Converter.decimalToText(viewModel.shoe_size)}"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayout3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/antic_didone"
+                    android:hint="@string/company"
+                    android:inputType="text"
+                    android:text="@={viewModel.shoe_comp}"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_margin"
+                app:layout_constraintBottom_toTopOf="@+id/btn_save"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayout4"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/antic_didone"
+                    android:hint="@string/desc"
+                    android:inputType="text"
+                    android:text="@={viewModel.shoe_desc}"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <Button
                 android:id="@+id/btn_cancel"
                 style="@style/boarding_btn"
-                android:layout_weight="0.5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/medium_margin"
-                android:text="Cancel"
-                android:onClick="@{()-> viewModel.addNewShoeNew(2)}"/>
+                android:layout_weight="0.5"
+                android:onClick="@{()-> viewModel.addNewShoeNew(2)}"
+                android:text="@string/cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
             <Button
                 android:id="@+id/btn_save"
                 style="@style/boarding_btn"
-                android:layout_weight="0.5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/medium_margin"
+                android:layout_weight="0.5"
                 android:onClick="@{()-> viewModel.addNewShoeNew(1)}"
-                android:text="Save" />
-        </LinearLayout>
+                android:text="@string/save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-    </LinearLayout>
+
 </layout>

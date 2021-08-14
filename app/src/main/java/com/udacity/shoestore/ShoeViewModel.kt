@@ -1,17 +1,12 @@
 package com.udacity.shoestore
 
-import android.app.Application
-import android.text.Editable
-import android.widget.Toast
-import androidx.databinding.BaseObservable
-import androidx.databinding.Observable
-import androidx.lifecycle.AndroidViewModel
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Shoe
 
-class ShoeListViewModel():ViewModel() {
+class ShoeListViewModel:ViewModel() {
 
     private val shoeList__= mutableListOf<Shoe>(
             Shoe("Black Running Shoes",40.0,"Bahati Co.","Comfortable running shoes", "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"),

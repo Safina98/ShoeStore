@@ -20,4 +20,13 @@
     <string name="instruction3">Click the add button to add a new Shoe</string>
     <string name="instruction4">Click menu and choose Logout to logout from the app</string>
     <string name="txt_instruction">Instructions</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="fab">Floating Action Button</string>
+    <string name="image_url">Image Url</string>
+    <string name="name">Name</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>
